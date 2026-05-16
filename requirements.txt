@@ -1,6 +1,7 @@
 fastapi
-uvicorn
+uvicorn[standard]
 edge-tts
 faster-whisper
 python-multipart
 pydantic
+gunicorn
