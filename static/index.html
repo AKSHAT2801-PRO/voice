@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice & Subtitle Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Voice & Subtitle Studio</h1>
+            <p>Transform your script into studio-quality audio and subtitles.</p>
+        </header>
+
+        <main>
+            <div class="glass-card form-section">
+                <form id="generateForm">
+                    <div class="form-group">
+                        <label for="script">Script Content</label>
+                        <textarea id="script" placeholder="Enter your script here... (e.g. Hello world!)" required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="voice">Voice Type & Tone</label>
+                            <select id="voice" required>
+                                <option value="en-US-GuyNeural">American Male - Guy (Professional)</option>
+                                <option value="en-US-AriaNeural">American Female - Aria (Engaging)</option>
+                                <option value="en-US-DavisNeural">American Male - Davis (Serious)</option>
+                                <option value="en-US-JaneNeural">American Female - Jane (Calm)</option>
+                                <option value="en-GB-RyanNeural">British Male - Ryan (News/Formal)</option>
+                                <option value="en-GB-SoniaNeural">British Female - Sonia (Conversational)</option>
+                                <option value="en-AU-NatashaNeural">Australian Female - Natasha (Upbeat)</option>
+                                <option value="en-AU-WilliamNeural">Australian Male - William (Relaxed)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submitBtn">
+                        <span class="btn-text">Generate Studio Output</span>
+                        <div class="spinner hidden" id="spinner"></div>
+                    </button>
+                </form>
+            </div>
+
+            <div class="glass-card result-section hidden" id="resultSection">
+                <h2>Generated Output</h2>
+                
+                <div class="audio-container">
+                    <p class="label">Audio Track</p>
+                    <audio id="audioPlayer" controls></audio>
+                    <a id="downloadAudioBtn" class="download-link" download>Download Audio (.mp3)</a>
+                </div>
+
+                <div class="subtitle-container">
+                    <p class="label">Subtitles</p>
+                    <a id="downloadSubtitleBtn" class="download-btn" download>Download Subtitles (.srt)</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
